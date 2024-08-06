@@ -22,3 +22,33 @@ Hints:
 
 """
 
+import re
+
+def categorize_product(code):
+    categories = {
+        "Electronics": r"EL\d{4}", 
+        "Clothing": r"CL\d{4}", 
+        "Groceries": r"GR\d{4}", 
+    }
+    for category, pattern in categories.items():
+        if re.match(pattern, code):
+            return category
+    return "Unknown"
+
+def organize_inventory(codes):
+    categorized_inventory = {"Electronics": [], "Clothing": [], "Groceries": [], "Unknown": []}
+    for code in codes:
+        try:
+            category = categorize_product(code)
+            categorized_inventory[category].append(code)
+        except Exception as e:
+            print(f"Error processing code {code}: {e}")
+            categorized_inventory["Unknown"].append(code)
+    return categorized_inventory
+
+product_codes = ["EL1001", "CL2002", "GR3003", "EL1004", "XX9999"]
+
+# Organizing and displaying categorized inventory
+inventory = organize_inventory(product_codes)
+for category, items in inventory.items():
+    print(f"{category}: {items}")

@@ -22,3 +22,44 @@ Hints:
 
 """
 
+import re
+
+
+def categorize_feedback(comment):
+    food_pattern = r"\b(taste|delicious|flavor|dish|menu)\b"
+    service_pattern = r"\b(service|waiter|staff|host|experience)\b"
+    ambiance_pattern = r"\b(ambiance|atmosphere|environment|decor)\b"
+
+    try:
+        categories = {"Food": False, "Service": False, "Ambiance": False}
+        if re.search(food_pattern, comment, re.IGNORECASE):
+            categories["Food"] = True
+        if re.search(service_pattern, comment, re.IGNORECASE):
+            categories["Service"] = True
+        if re.search(ambiance_pattern, comment, re.IGNORECASE):
+            categories["Ambiance"] = True
+        return categories
+    except Exception as e:
+        print(f"Error analyzing comment: {e}")
+        return categories
+
+
+feedback_comments = [
+    "The ambiance was romantic and cozy.", 
+    "Waiters were so friendly and prompt.", 
+    "Loved the flavor of the grilled salmon!", 
+    "The decor is outdated, but the food tastes great.", 
+    "Slow service, but the mabiance made up for it."
+]
+
+# Analyzing feedback
+feedback_count = {"Food": 0, "Service": 0, "Ambiance": 0}
+for comment in feedback_comments:
+    feedback = categorize_feedback(comment)
+    for category, present in feedback.items():
+        if present:
+            feedback_count[category] += 1
+
+# Displaying feedback analysis
+for category, count in feedback_count.items():
+    print(f"{category} Feedback: {count}")

@@ -21,4 +21,32 @@ Hints:
 
 """
 
+import re
 
+def standardize_timestamps(log):
+    # Standardize DD/MM/YYYY to YYYY-MM-DD
+    log = re.sub(r"(\d{2})/(\d{2})/(\d{4})", r"\3-\2-\1", log)
+    return log
+
+def anonymize_emails(log):
+    log = re.sub(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", "[ANONYMIZED]", log)
+    return log
+
+def format_log(log_entries):
+    try:
+        log_entries = standardize_timestamps(log_entries)
+        log_entries = anonymize_emails(log_entries)
+        return log_entries
+    except Exception as e:
+        print(f"Error formatting log: {e}")
+        return log_entries
+
+
+log_data = """
+    User [john.doe@example.com] accessed the system on 14/03/2022.
+    User [jane.doe@domain.com] accessed the system on 15/03/2022.
+"""
+
+# Formatting and displaying the log data
+formatted_log = format_log(log_data)
+print(formatted_log)

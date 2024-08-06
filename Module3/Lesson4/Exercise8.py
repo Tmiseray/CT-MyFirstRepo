@@ -22,4 +22,33 @@ Hints:
 
 """
 
+import re
+
+
+def validate_badge_id(badge_id):
+    pattern = r"^[A-Z]{2}-\d{3}$"
+    if re.match(pattern, badge_id):
+        return True
+    return False
+
+def process_badge_ids(ids):
+    valid_ids = []
+    invalid_ids = []
+    for id in ids:
+        try:
+            if validate_badge_id(id):
+                valid_ids.append(id)
+            else:
+                invalid_ids.append(id)
+        except Exception as e:
+            print(f"Error processing badge ID {id}: {e}")
+            invalid_ids.append(id)
+    return valid_ids, invalid_ids
+
+badge_ids = ["AB-123", "XY-456", "A-789", "CD-12", "EF-345"]
+
+# Validating and categorizing badge IDs
+valid, invalid = process_badge_ids(badge_ids)
+print("Valid Badge IDs:", valid)
+print("Invalid Badge IDs:", invalid)
 

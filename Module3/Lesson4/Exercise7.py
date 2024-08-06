@@ -23,3 +23,34 @@ Hints:
 
 """
 
+import re
+
+
+def validate_code(code):
+    pattern = r"^[A-Z]{3}-\d{4}$"
+    if re.match(pattern, code):
+        return True
+    return False
+
+def process_codes(codes):
+    valid_codes = []
+    invalid_codes = []
+    for code in codes:
+        try:
+            if validate_code(code):
+                valid_codes.append(code)
+            else:
+                invalid_codes.append(code)
+        except Exception as e:
+            print("Error processing code:", {e})
+            invalid_codes.append(code)
+    return valid_codes, invalid_codes
+
+
+# Sample list of codes
+product_codes = ["ABC-1234", "XYZ-5678", "ABCD-1234", "XYZ-123", "EFG-5678"]
+
+# Validating and categorizing product codes
+valid, invalid = process_codes(product_codes)
+print("Valid Codes:", valid)
+print("Invalid Codes:", invalid)

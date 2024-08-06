@@ -23,4 +23,43 @@ Hints:
 
 """
 
+import re
 
+
+def sort_books(title):
+    genre_patterns = {
+        "Fiction": r"\b(Adventure|Novel|Story)\b", 
+        "Non-Fiction": r"\b(Biography|Memoir|Essay)\b", 
+        "Science": r"\b(Physics|Chemistry|Biology)\b", 
+        "History": r"\b(Historic|Ancient|Medieval)\b", 
+    }
+    for genre, pattern in genre_patterns.items():
+        if re.search(pattern, title, re.IGNORECASE):
+            return genre
+    return "General"
+
+def organize_books(titles):
+    sorted_books = {"Fiction": [], "Non-Fiction": [], "Science": [], "History": [], "General": []}
+    for title in titles:
+        try:
+            genre = sort_books(title)
+            sorted_books[genre].append(title)
+        except Exception as e:
+            print(f"Error sorting book {title}: {e}")
+            sorted_books["General"].append(title)
+    return sorted_books
+
+
+# Sample list of book titles
+book_titles = [
+    "The Adventure of Sherlock Holmes", 
+    "Einstein: His Life and Universe", 
+    "The Art of War: Ancient Strategies", 
+    "Introduction to Quantum Physics", 
+    "The Story of Human Language"
+]
+
+# Organizing and displaying sorted books
+books_by_genre = organize_books(book_titles)
+for genre, books in books_by_genre.items():
+    print(f"{genre} Books: {books}")
