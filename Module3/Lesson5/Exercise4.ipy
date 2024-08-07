@@ -1,9 +1,0 @@
-# Exercise 4: Customer Feedback Analysis System
-"""
-Objective: Develop a Python program to analyze and categorize customer feedback from a file. This exercise involves file handling for reading customer comments, integrating Python concepts like string manipulation, functions, conditional statements, loops, and data structures such as lists and dictionaries for categorizing feedback.
-
-Problem Statement: You need to create a Python program to process customer feedback stored in a file (customer_feedback.txt). Each line in the file contains a customer's name and their comment, separated by a colon (e.g., "John Doe: Loved the product, excellent quality!"). The program should categorize these comments into positive, negative, and neutral feedback based on certain keywords and provide a summary.
-
-"""
-
-
