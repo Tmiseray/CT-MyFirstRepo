@@ -6,7 +6,7 @@ The program will involve file handling for storing and retrieving attendance dat
 Problem Statement: You are tasked with creating a Python program to manage attendance records for a series of local events. The attendance data will be stored in a file (event_attendance.txt), with each line containing an event's name, date, and a comma-separated list of attendee names (e.g., "Python Workshop,2023-03-21,John Doe, Jane Smith"). The program should allow for adding new events, registering attendees, and generating attendance reports.
 
 **Instructions:**
-1. Read the existing attendance data from event _attendance. txt* .
+1. Read the existing attendance data from 'event_attendance.txt'.
 2. Provide a menu with options to Add a New Event, Register an Attendee, and Generate Attendance Report.
 3. Implement functionalities for each menu option:
     - **Add a New Event:** Prompt for the event's name and date, and create an entry.
