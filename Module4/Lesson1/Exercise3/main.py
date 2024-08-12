@@ -17,3 +17,21 @@ Exercise 3: Recipe Ingredient Converter - Instructions
     - Run the program to test various conversions, ensuring each function in the module works as expected.
 
 """
+
+from unit_converter import cups_to_milliliters, teaspoons_to_milliliters
+
+def main():
+    try:
+        quantity = float(input("Enter the quantity of the ingredient: "))
+        unit = input("Enter the unit to convert from (cups or teaspoons): ")
+        if unit == 'cups':
+            print(f"{quantity} cups is {cups_to_milliliters(quantity)} milliliters.")
+        elif unit == 'teaspoons':
+            print(f"{quantity} teaspoons is {teaspoons_to_milliliters(quantity)} milliliters.")
+        else:
+            print("Invalid unit. Please enter 'cups' or 'teaspoons'.")
+    except ValueError:
+        print("Please enter a valid numeric quantity.")
+
+if __name__ == '__main__':
+    main()

@@ -18,3 +18,22 @@ Exercise 4: Currency Exchange Calculator - Instructions
     - Run the program to ensure the currency conversion and aliasing are working correctly.
 
 """
+
+from currency_converter import usd_to_eur as to_euro, gbp_to_usd as to_usd
+
+
+def main():
+    try:
+        amount = float(input("Enter the amount to convert: "))
+        currency = input("Enter the currency to convert from (USD or GBP): ").upper()
+        if currency == 'USD':
+            print(f"{amount} USD is {to_euro(amount)} EUR.")
+        if currency == 'GBP':
+            print(f"{amount} GBP is {to_usd(amount)} USD.")
+        else:
+            print("Invalid currency. Please enter 'USD' or 'GBP'.")
+    except ValueError:
+        print("Please enter a valid numeric amount.")
+
+if __name__ == '__main__':
+    main()
