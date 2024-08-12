@@ -20,7 +20,62 @@ S. Use exception handling for potential file reading and writing errors.
 - Use 'open()' in the appropriate mode to read from and write to the file.
 - Consider using 'split()' for parsing lines and string manipulation.
 - Store the recipe data in a suitable structure, like a list of dictionaries, for easy manipulation.
-- Use relative path 'Module3/Lesson5/Exercise1/filename.txt'
+- Use relative path 'Module3/Lesson5/Exercise6/recipes_collection.txt'
 """
 
 
+def read_recipes(filename):
+    try:
+        with open(filename, 'r') as file:
+            recipes = []
+            for line in file:
+                name, ingredient, steps = line.strip().split(';')
+                recipes.append({'name': name, 'ingredients': ingredient.split(','), 'steps': steps})
+            return recipes
+    except FileNotFoundError:
+        []
+
+def write_recipes(filename, recipes):
+    with open(filename, 'a') as file:
+        last_recipe = recipes[-1]
+        file.write(f"{last_recipe['name']};{','.join(last_recipe['ingredients'])};{last_recipe['steps']}\n")
+
+def add_recipe(recipes):
+    name = input("Enter recipe name: ")
+    ingredients = input("Enter ingredients (comma-separated): ").split(',')
+    steps = input("Enter preparation steps: ")
+    recipes.append({'name': name, 'ingredients': ingredients, 'steps': steps})
+
+def search_by_ingredient(recipes):
+    ingredient = input("Enter ingredient to search for: ")
+    found_recipes = [recipe['name'] for recipe in recipes if ingredient in recipe['ingredients']]
+    print("Recipes with", ingredient, ":", ','.join(found_recipes))
+
+def list_all_recipes(recipes):
+    for recipe in recipes:
+        print(recipe['name'])
+
+def main():
+    recipes = read_recipes('Module3/Lesson5/Exercise6/recipes_collection.txt')
+
+    while True:
+        print("\n1. Add a New Recipe")
+        print("2. Search by Ingredient")
+        print("3. List All Recipes")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            add_recipe(recipes)
+            write_recipes('Module3/Lesson5/Exercise6/recipes_collection.txt', recipes)
+        elif choice == '2':
+            search_by_ingredient(recipes)
+        elif choice == '3':
+            list_all_recipes(recipes)
+        elif choice == '4':
+            break
+        else:
+            print("Invalid choice.")
+
+if __name__ == '__main__':
+    main()

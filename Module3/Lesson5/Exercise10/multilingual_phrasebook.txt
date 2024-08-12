@@ -1,0 +1,27 @@
+--- English ---
+Hello
+Thank you
+Goodbye
+Please
+Yes
+No
+Excuse me
+
+--- Spanish ---
+Hola
+Gracias
+Adiós
+Por favor
+Sí
+No
+Perdón
+
+--- French ---
+Bonjour
+Merci
+Au revoir
+S'il vous plait
+Oui
+Non
+Excusez-moi
+

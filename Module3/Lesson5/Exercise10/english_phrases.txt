@@ -1,0 +1,7 @@
+Hello
+Thank you
+Goodbye
+Please
+Yes
+No
+Excuse me

@@ -1,0 +1,10 @@
+John Doe: Paris, London, New York
+Jane Smith: Tokyo, Berlin, Paris
+Alex Jonnson: Cairo, Istanbul, London
+Maria Garcia: Sydney, Tokyo, Paris
+James Brown: New York, Berlin, Amsterdam
+Emily Davis: Cairo, Buenos Aires, London
+Michael Miller: Tokyo, London, San Francisco
+Linda Martinez: Paris, Amsterdam, Toronto
+David Rodriguez: New York, Sydney, Istanbul
+Sarah Wilson: Amsterdam, Berlin, Rome

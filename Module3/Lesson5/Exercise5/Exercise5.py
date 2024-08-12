@@ -20,6 +20,71 @@ Problem Statement: You are tasked with creating a Python program to manage atten
 - Use 'open()' in the appropriate mode to read from and write to the file.
 - Consider using 'split()' for parsing lines and 'join()' for reconstructing them.
 - Store the event data in a dictionary with event names as keys and lists of attendees as values.
-- Use relative path 'Module3/Lesson5/Exercise1/filename.txt'
+- Use relative path 'Module3/Lesson5/Exercise5/event_attendance.txt'
 """
 
+def read_attendance(filename):
+    try:
+        with open(filename, 'r') as file:
+            attendance = {}
+            for line in file:
+                parts = line.strip().split(',')
+                event, date = parts[0], parts[1]
+                attendees = parts[2:] if len(parts) > 2 else []
+                attendance[event] = {'date': date, 'attendees': attendees}
+                return attendance
+    except FileNotFoundError:
+        {}
+
+def write_attendance(filename, attendance):
+    with open(filename, 'w') as file:
+        for event, info in attendance.items():
+            line = f"{event}, {info['date'],{','.join(info['attendees'])}}\n"
+            file.write(line)
+
+def add_event(attendance):
+    event = input("Enter event name: ")
+    date = input("Enter the event date (YYY-MM-DD): ")
+    attendance[event] = {'date': date, 'attendees': []}
+
+def register_attendee(attendance):
+    event = input("Enter event name: ")
+    if event not in attendance:
+        print("Event not found.")
+    else:
+        attendee = input("Enter attendee's name: ")
+        attendance[event]['attendees'].append(attendee)
+
+def generate_report(attendance):
+    for event, info in attendance.items():
+        print(f"\nEvent: {event} (Date: {info['date']})")
+        print("Attendees:")
+        for attendee in info['attendees']:
+            print(f"- {attendee}")
+
+
+def main():
+    attendance = read_attendance('Module3/Lesson5/Exercise5/event_attendance.txt')
+
+    while True:
+        print("\n1. Add a New Event")
+        print("2. Register an Attendee")
+        print("3. Generate Attendance Report")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            add_event(attendance)
+        elif choice =='2':
+            register_attendee(attendance)
+        elif choice == '3':
+            generate_report(attendance)
+        elif choice == '4':
+            break
+        else:
+            print("Invalid choice.")
+
+        write_attendance('Module3/Lesson5/Exercise5/event_attendance.txt', attendance)
+
+if __name__ == '__main__':
+    main()
