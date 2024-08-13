@@ -1,0 +1,29 @@
+"""
+Exercise 4: City Event Planner System
+
+Instructions:
+1. Create Event Class and EventManager Module:
+    - The Event class should have methods to add an event, register participants, and display event details.
+    - Organize the Event class in an EventManager module.
+2. Implement File Handling for Event Details:
+    - Use text file handling to save and read event details.
+    - Ensure the system can store event information in a file and retrieve it when needed.
+3. User Interaction for Event Management:
+    - Use input functions to add events, register participants, and display event details.
+    - Implement loops and conditional statements for handling various actions.
+4. Exception Handling and Data Structures:
+    - Use try-except blocks for managing file handling errors and invalid inputs.
+    - Utilize lists, dictionaries, or tuples to manage events and participants.
+
+Explanation:
+- The Event class in the event_manager module handles individual event details and participant registration
+- The main program manages a collection of events, allowing the user to add events, register participants, and save or display event details
+- File handling is user to store event details in a file (events.txt) and load them when the program starts
+- Excepetion handling ensures the system is robust, especially in file operations and user inputs
+- Data structures like dictionaries (for managing events) and lists (for paticipants) efficiently organize the data.
+
+Hints:
+- Consider using a dictionary to manage events with their names as keys
+- Implement a function to format event details neatly before saving them to a file
+
+"""
