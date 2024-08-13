@@ -1,5 +1,5 @@
 """
-Exercise 2: City Library Management System
+Exercise 2: Apartment Management System
 
 Instructions:
 1. Define an ApartmentBuilding Class:
@@ -27,3 +27,61 @@ Hints:
 - Consider implementing a method to calculate the percentage of occupied units in each building.
 
 """
+
+class ApartmentBuilding:
+    shared_facilities = ['Gym', 'Swimming Pool', 'Parking Lot']
+
+    def __init__(self, name, total_units):
+        self.name = name
+        self.total_units = total_units
+        self.occupied_units = 0
+
+    def update_occupancy(self, change):
+        if 0 <= self.occupied_units + change <= self.total_units:
+            self.occupied_units += change
+            return True
+        return False
+    
+    def available_units(self):
+        return self.total_units + self.occupied_units
+    
+    def occupancy_rate(self):
+        return (self.occupied_units / self.total_units) * 100
+
+
+
+buildings = [] # List of ApartmentBuilding Objects
+
+while True:
+    action = input("Enter action (add, update, list, exit): ").lower()
+    if action == "exit":
+        break
+
+    try:
+        if action == "add":
+            name = input("Enter building name: ")
+            units = int(input("Enter total units: "))
+            buildings.append(ApartmentBuilding(name, units))
+            print(f"Building '{name}' added with {units} units.")
+        elif action == "update":
+            name = input("Enter building name to update occupancy: ")
+            change = int(input("Enter change in occupied units: "))
+            for building in buildings:
+                if building.name == name:
+                    if building.update_occupancy(change):
+                        print(f"Updated occupancy for '{name}'.")
+                    else:
+                        print("Invalid occupancy change.")
+                    break
+            else:
+                print("Building not found.")
+        elif action == "list":
+            for building in buildings:
+                print(f"{building.name}: {building.available_units()} available units, "
+                      f"Occupancy rate: {building.occupancy_rate():.2f}%")
+    except ValueError:
+        print("Invalid input, please enter numeric values for units.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+print("Apartment management system closed.")
