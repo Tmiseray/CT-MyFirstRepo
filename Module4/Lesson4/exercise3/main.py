@@ -20,3 +20,32 @@ category.
 7. Modularize the system by separating functionalities into different Python modules.
 
 """
+
+from cart import ShoppingCart, Item
+
+def main():
+    cart = ShoppingCart()
+    while True:
+        try:
+            action = input("Choose action: add, remove, view, checkout: ")
+            if action not in ['add', 'remove', 'view', 'checkout']:
+                raise ValueError("Invalid action.")
+            if action == 'add':
+                name = input("Enter item name: ")
+                price = float(input("Enter item price: "))
+                category = input("Enter item category: ")
+                quantity = int(input("Enter quantity: "))
+                cart.add_item(Item(name, price, category), quantity)
+            elif action == 'remove':
+                name = input("Enter item to remove: ")
+                cart.remove_item(name)
+            elif action == 'view':
+                cart.view_cart()
+            elif action == 'checkout':
+                cart.checkout()
+                break
+        except ValueError as e:
+            print(e)
+
+if __name__ == '__main__':
+    main()
