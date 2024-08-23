@@ -10,7 +10,7 @@ if conn is not None:
         # Assuming we have John Doe's customer ID
         customer_id = 5
         # Assuming we have the order's ID and the new date
-        order_id = 1    # Example order ID to be updated
+        order_id = 2    # Example order ID to be updated
         new_order_date = "2024-02-20"
 
         # SQL query

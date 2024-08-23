@@ -6,18 +6,18 @@ if conn is not None:
     try:
         cursor = conn.cursor()
 
-        # Assuming we have John Doe's customer ID
-        customer_id = 5
-        # Order ID to be deleted
-        order_id = 2    # Example order ID to be deleted
+        # Updating book details
+        new_price = 25.00
+        new_genre = "Adventure"
+        book_id = 5     # Example book ID
 
         # SQL query
-        query = "DELETE FROM Orders WHERE id = %s AND customer_id = %s"
+        query = "UPDATE Books SET price = %s, genre = %s WHERE id = %s"
 
         # Executing the query
-        cursor.execute(query, (order_id, customer_id))
+        cursor.execute(query, (new_price, new_genre, book_id))
         conn.commit()
-        print("Order deleted successfully!")
+        print("Book details updated successfully.")
 
     except Exception as e:
         print(f"Error: {e}")

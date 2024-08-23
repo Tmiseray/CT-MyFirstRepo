@@ -1,0 +1,51 @@
+Exercise 1: Managing a Virtual Bookstore Database
+
+Objective:
+Your goal is to develop a Python application that manages a virtual bookstore database. This exercise involves creating Python scripts to interact with a database containing information about authors and their books. You'll be implementing functionality to create, read, update, and delete (CRUD) records in these tables.
+
+Problem Statement:
+In the world of a virtual bookstore, managing book and author details is crucial. The database contains two tables -
+'Authors' and 'Books'. Each book is linked to an author via a foreign key. You need to write Python scripts to handle typical bookstore operations like adding new books, updating prices, retrieving book information, and deleting old records.
+
+Instructions:
+
+1. Create a Python script to add new authors and books: The script should prompt the user to enter details for a new author and book. Ensure that the book's autor_id corresponds to an existing autor in the 'authors' table.
+
+2. Create a Python script to retrieve information: Write a script to display all books in the database, including their author details. Implement functionality to search for books by title or author name.
+
+3. Create a Python script to update book details: Allow the user to update the price and genre of a book based on its title or ID.
+
+4. Create a Python script to delete records: Enable the user to delete a book from the database. Implement checks to prevent deletion if the book does not exist.
+
+Hints:
+- Use the mysql-connector-python module to establish a connection to the MySQL database.
+- Remember to commit your changes to the database after insert, update, or delete operations.
+- Use try-except blocks to handle any potential exceptions, such as database connection errors or SQL execution issues.
+
+
+
+Exercise 2: Advanced Bookstore Database Queries
+
+Objective:
+In this exercise, you'll enhance your skills in crafting more complex SQL queries using Python. The focus will be on executing various types of SELECT statements to retrieve specific information from the 'Books' and 'Authors' tables in a bookstore database.
+
+Problem Statement:
+Your virtual bookstore contains a wealth of information that needs to be accessed in different ways. You are tasked with writing Python scripts to execute various SQL queries for distinct purposes: listing unique genres, finding books with similar titles, selecting books by specific authors, and identifying books published within a specific timeframe.
+
+Instructions:
+
+1. List Distinct Genres: Write a script that queries the database to list all distinct genres available in the 'Books' table.
+
+2. Find Books with Similar Titles: Create a script that searches for books with titles containing the word "Mystery" and displays their details.
+
+3. Select Books by Specific Authors: Develop a script that retrieves and shows details of books written by Author One, 'Author Three', and 'Author Five'.
+
+4. Books Published in a Specific Period: Craft a script to find all books published between January 1, 2020, and
+December 31, 2021.
+
+Hints:
+- Utilize SELECT and DISTINCT SQL keywords for fetching unique values from a column.
+- Use the LIKE keyword for pattern matching in SQL queries.
+- Implement SQL operations to combine rows from the 'Books' and 'Authors' tables based on related columns.
+- For date range queries, the BETWEEN SQL operator will be handy.
+- For reading input from the user, consider using the input function in Python.
