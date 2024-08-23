@@ -4,10 +4,10 @@ from mysql.connector import Error
 def connect_database():
     """ Connect to the MySQL database and return the connection object """
     # Database connection parameters
-    db_name = "your_dbname"
-    user = "your_username"
-    password = "your_password"
-    host = "your_host"
+    db_name = "e_commerce_db"
+    user = "root"
+    password = "D!Vincenz022"
+    host = "localhost"
 
     try:
     # Attempting to establish a connection
