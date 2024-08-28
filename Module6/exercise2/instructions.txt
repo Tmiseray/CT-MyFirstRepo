@@ -1,0 +1,17 @@
+Exercise 2: Fetching and Displaying
+Poetry Data Using PoetryDB
+
+Problem Statement:
+You're developing a feature for an educational app that displays a list of poems by a specific author, including the title and lines of each poem. Your task is to use the Poetry API to fetch poems by a given author and display their titles and excerpts.
+
+Instructions:
+1. Set up a Python environment and install the requests package.
+2. Write a Python script to send a GET request to the PoetryD API to fetch poems by a specific author.
+3. Extract the title and the first few lines of each poem from the API response.
+4. Print each poem's title followed by the extracted lines.
+
+Hints:
+- PoetryDB's endpoint for fetching poems by an author: https://poetrydb.org/author/{author_name}.
+- Use requests. get (url) to make the GET request.
+- The response from the API will be in JSON format, which can be converted to a Python object using response. json ().
+- Use a loop to iterate through the list of poems in the response.

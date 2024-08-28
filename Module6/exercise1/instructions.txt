@@ -1,0 +1,18 @@
+Exercise 1: Setting Up a Virtual Environment for Tech Phrase Generator
+
+Problem Statement:
+Imagine you're building a part of an application that provides users with catchy tech phrases for their presentations or social media posts available at Techy. To do this, you need to set up a Python environment and make API requests to the Techy phrase generator service. The focus here is on initializing and using a virtual environment, and installing the required packages for making HTTP requests.
+
+Instructions:
+1. Create a new virtual environment in Python.
+2. Activate the virtual environment.
+3. Install the requests package, which is required to make HTTP requests to the API.
+4. Write a Python script to make a GET request to the tech phrase API endpoint and print the response.
+5. Ensure your script runs without errors and successfully prints a tech-savvy phrase.
+
+Hints:
+- To create a virtual environment, use python -m venv env_name.
+- Activate the environment with source env_name/bin/activate on Unix/macOS or env_name| |Scripts|\activate on Windows.
+- Install the requests package using pip install requests.
+- The Python requests library can be used to make GET requests with requests. get (url).
+- Look for a free tech phrase API or a similar service that does not require authentication for simplicity.
