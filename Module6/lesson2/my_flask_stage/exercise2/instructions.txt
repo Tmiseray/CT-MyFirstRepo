@@ -1,0 +1,15 @@
+Exercise 2: Developing an API for Managing a Virtual Bookstore
+
+Problem Statement: 
+You have been tasked with creating a RESTful API for a virtual bookstore. This API will interact with a MySQL database to manage authors and books. The bookstore needs endpoints to perform CRUD (Create, Read, Update, Delete) operations on authors and books.
+
+Instructions:
+1. Implement Flask routes to add authors and books.
+2. Create routes to retrieve all books along with their authors' details.
+3. Ensure all routes handle potential errors and return appropriate responses.
+
+Hints:
+- Utilize the Python scripts developed in previos exercises ('add_records.py*, retrieve_data.py', 'update_book.py*,delete_book.py*) to guide your Flask route implementations.
+- Remember to establish and close database connections properly in each route.
+- Use HTTP status codes to indicate the success or failure of requests.
+- For retrieving books, consider joining the 'Books' and 'Authors' tables to provide comprehensive book information.

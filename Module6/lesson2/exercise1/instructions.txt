@@ -1,0 +1,28 @@
+Exercise 1: Building the Order Management Endpoint for the Flask E-commerce Application
+
+Problem Statement: 
+You have already set up a Flask application for an e-commerce platform with a customer management system. Now, you need to add functionality to manage customer orders. Your task is to create endpoints that allow users to: 
+- Add a new order
+- Retrieve a list of all orders
+- Retrieve a specific order by ID
+- Update an existing order
+- Delete an order
+
+Instructions:
+1. Implement a new Flask route to add a new order.
+2. Create a route to retrieve all orders.
+3. Implement a route to retrieve a specific order by ID.
+4. Develop a route to update an existing order.
+5. Create a route to delete an order
+
+Hints:
+- Use the 'GET' method for retrieving orders, 'POST' for adding a new order, 'PUT' for updating an existing order, and 'DELETE' for deleting an order.
+- For adding a new order, your route should accept details like customer ID and order date.
+- When retrieving orders, remember to format the response in a JSON format.
+id acept details like customermand order date.
+- Ensure you handle cases where an order might not exist for the given ID, especially for retrieval, update, and
+delete operations.
+- Use appropriate HTTP status codes to indicate the success or failure of an operation.
+
+
+*** Response in Module6/lesson2/my_flask_stage/app_orders.py

@@ -1,0 +1,17 @@
+Exercise 3: Creating an API for Advanced Queries in a Virtual Bookstore
+
+Problem Statement: 
+Your virtual bookstore has grown, and users now need more sophisticated ways to browse the bookstore's collection. You are tasked with creating an API that can handle complex queries such as listing distinct genres, searching for books by title keywords, selecting books by specific authors, and finding books published in a certain period.
+
+Instructions:
+1. Create an endpoint to list all distinct genres available in the bookstore
+2. Develop a route that allows users to search for books with titles containing a specific keyword
+3. Implement an endpoint to retrieve books written by a list of given authors
+4. Design a route to find books that were published within a specified date range
+
+Hints:
+- Use the SQL queries from previous exercises as the basis for your route implementations
+- For the keyword search, use a '%' wildcard before and after the keyword in the SQL query
+- When selecting books by authors, you'll need to dynamically build the SQL query based on the number of authors provided
+- Use proper date formats for the publication date range query
+- Remember to handle potential SQL injection risks by using placeholders and parameterized queries
