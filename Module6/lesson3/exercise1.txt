@@ -1,0 +1,25 @@
+Exercise 1: Building a Product Management Endpoint for an E-Commerce Platform
+
+Problem Statement: 
+In our e-commerce platform, we currently manage customers. To continue our e-commerce functionalities, we need to build an endpoint for product management. This endpoint should handle various product-related operations, making it easier for the store managers to manage their inventory.
+
+Instructions:
+1. Create a Flask Route for Adding a New Product:
+    - The route should be "/products' using the 'POST' method.
+    - It should accept product details (like name and 'price') in the request body.
+2. Implement a Route to Retrieve All Products:
+    - Create a 'GET' method route at '/products'.
+    - This route should return a list of all products in the database.
+3. Create Endpoints for Updating and Deleting a Product:
+    - For updating, use a 'PUT method at /products/<int:id>.
+    - For deleting, use a 'DELETE method at /products/<int:id>.
+    - Ensure that the product with the given 'id' exists before attempting to update or delete.
+4. Implement Data Validation:
+    - Validate incoming data for creating and updating products.
+    - Ensure that 'name' is a non-empty string and 'price' is a positive number.
+
+Hints:
+- Use Flask's 'request' object to access incoming data.
+- For the 'POST' and 'PUT' routes, use SQLAlchemy's 'add' and 'commit' methods for database operations.
+- Leverage Flask-SQLAlchemy's 'query' functionality for the 'GET' and 'DELETE' routes.
+- Remember to handle exceptions and edge cases, like attempting to update or delete a non-existent product.

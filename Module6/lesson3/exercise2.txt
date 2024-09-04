@@ -1,0 +1,18 @@
+Exercise 2: Querying Customer and Product Data in an E-Commerce Application
+
+Problem Statement: 
+In our e-commerce platform, there is a need to frequently query specific information about customers and products. For instance, finding a customer by email or a product by its name. Your task is to implement efficient querying capabilities to retrieve this data.
+
+Instructions:
+1. Query a Customer by Email:
+    - Implement a function that takes an email address as input and returns the corresponding customer's details.
+    - Use the '.filter_by()' method to filter customers based on the provided email.
+2. Query a Product by Name:
+    - Create a function to search for a product by its name.
+    - Use the '.filter()' method with a lambda function to perform this query.
+3. Handle No Results Found:
+    - Both functions should handle cases where no matching record is found in the database, returning an appropriate message.
+
+Hints:
+- Recall that '.filter_by()' is typically used for simple queries, while '.filter()' is more flexible and can handle complex conditions.
+- Remember to convert the query result to a format that can be easily returned or displayed, such as a dictionary or JSON.
